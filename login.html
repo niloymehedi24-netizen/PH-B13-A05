@@ -13,8 +13,45 @@
     <!-- daisy UI and tailwind -->
      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-[#F8FAFC] flex items-center justify-center h-full mt-[80px]">
     
+    <div class="bg-white p-8 rounded-xl shadow-md w-[450px] text-center space-y-6">
+
+        <img class="mx-auto mt-8" src="./assets/github-logo.png" alt="">
+        <h1 class="text-2xl font-semibold mb-1 text-[#1F2937]">GitHub Issues Tracker</h1>
+        <p class="text-[#64748B] font-normal mb-6">Sign in to manage your issues</p>
+
+        <div>
+            <p class="text-left text-[#1F2937] font-normal">Username</p>
+            <input id="username" class="w-full border p-2 rounded mb-3" type="text" placeholder="Enter Username"/>
+            <p class="text-left text-[#4A00FF] font[14px]">Default: admin</p>
+            <br>
+            <p class="text-left text-[#1F2937] font-normal">Password</p>
+            <input id="password" class="w-full border p-2 rounded mb-4" type="password" placeholder="Enter Password"/>
+            <p class="text-left text-[#4A00FF] text-sm">Default: admin123</p>
+        </div>
+        
+
+        <button onclick="login()" class="w-full bg-[#4A00FF] text-white py-2 rounded hover:cursor-pointer"> Sign In </button>
+
+        <hr> <span class="font-[400px]">OR</span>
+
+        <p class="text-sm text-[#64748B] mt-4"> Demo Credentials</p>
+
+        <div class="bg-gray-100 rounded-md mb-8">
+            <p><span class="font-semibold">Username:</span> admin</p>
+            <p><span class="font-semibold">Password:</span> admin123</p>
+        </div>
+
+    </div>
+
+<script src="login.js"></script>
+
 </body>
 </html>
