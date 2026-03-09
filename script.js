@@ -58,12 +58,12 @@ const displayIssues = (issues) => {
         <img src="./assets/Open-Status.png" alt="">
         <h3 class="font-semibold text-lg mb-2">${issue.title}</h3>
 
-        <p class="text-gray-600 text-sm mb-3"> ${issue.description.slice(0,80)}...</p>
+        <p class="text-gray-500 text-sm mb-3"> ${issue.description.slice(0,80)}...</p>
 
         <div class="flex justify-between text-sm mb-2">
             <span class="text-gray-500"> ${issue.author} </span>
 
-            <span class="px-2 py-1 rounded text-xs ${issue.status === "open"? "bg-green-100 text-green-700" : "bg-purple-100 text-purple-700"}">${issue.status} </span>
+            <span class="px-2 py-1 rounded text-xs ${issue.status === "open"? "bg-green-100 text-green-600" : "bg-purple-100 text-purple-600"}">${issue.status} </span>
 
         </div>
 
