@@ -78,3 +78,23 @@ const displayIssues = (issues) => {
 
 }
 
+const tabChange = (event,status) => {
+
+    document.querySelectorAll(".btn-tab").forEach(btn => {
+        btn.classList.remove("bg-indigo-600","text-white");
+        btn.classList.add("bg-gray-200");
+    })
+
+    event.target.classList.remove("bg-gray-200");
+    event.target.classList.add("bg-indigo-600","text-white");
+
+    if(status === "all"){
+        displayIssues(allIssues) 
+        return;
+    }
+
+    const filtered = allIssues.filter(issue => issue.status === status)
+
+    displayIssues(filtered);
+
+}
