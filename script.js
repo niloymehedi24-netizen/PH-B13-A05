@@ -38,5 +38,43 @@ const totalCounts = () => {
 
 }
 
+const displayIssues = (issues) => {
 
+    issuesContainer.innerHTML = "";
+
+    issues.forEach(issue => {
+    const card = document.createElement("div");
+
+    card.className = "bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer transition";
+
+    if(issue.status === "open"){
+        card.classList.add("border-t-4","border-green-500");
+    }
+    else{
+        card.classList.add("border-t-4","border-purple-500");
+    }
+
+    card.innerHTML = `
+        <img src="./assets/Open-Status.png" alt="">
+        <h3 class="font-semibold text-lg mb-2">${issue.title}</h3>
+
+        <p class="text-gray-600 text-sm mb-3"> ${issue.description.slice(0,80)}...</p>
+
+        <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-500"> ${issue.author} </span>
+
+            <span class="px-2 py-1 rounded text-xs ${issue.status === "open"? "bg-green-100 text-green-700" : "bg-purple-100 text-purple-700"}">${issue.status} </span>
+
+        </div>
+
+        <p class="text-xs text-gray-400"> ${issue.createdAt} </p>
+    `
+
+    card.onclick = () => showIssue(issue.id)
+
+    issuesContainer.appendChild(card)
+
+    })
+
+}
 
