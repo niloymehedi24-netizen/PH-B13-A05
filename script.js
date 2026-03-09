@@ -98,3 +98,25 @@ const tabChange = (event,status) => {
     displayIssues(filtered);
 
 }
+
+fetchIssues();
+
+const searchIssue = async () => {
+
+    const text = document.getElementById("searchInput").value;
+    manageSpinner();
+    const response = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`);
+    const data = await response.json();
+
+    displayIssues(data.data)
+
+}
+
+    document.getElementById("searchInput").addEventListener("keyup", ku => {
+    
+        if(ku.key === "Enter"){
+
+    searchIssue()
+    }
+
+})
