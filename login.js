@@ -10,8 +10,8 @@ const login = () => {
 
   if (userName === "admin" && password === "admin123") {
 
-    alert("Sign-in Successful")
-    window.location.assign = "./index.html"
+    localStorage.setItem("login", "true")
+    window.location.href = "./index.html"
 
   } else {
 

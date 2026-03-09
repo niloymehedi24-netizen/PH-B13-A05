@@ -31,7 +31,7 @@
 
             <div class="flex gap-4 h-[44px]">
                 
-                <input id="searchInput" class="border-gray-300 rounded px-3 py-1 text-[#64748B]" type="text" placeholder="Search issues..."/>
+                <input id="searchInput" class="border-gray-300 rounded px-3 py-2 text-[#64748B]" type="text" placeholder="Search issues..."/>
 
                 <button onclick="searchIssue()" class="bg-[#4A00FF] rounded hover:cursor-pointer font-normal text-white px-4 py-1 w-[140px]"> <span><i class="fa-solid fa-plus"></i></span> New Issue </button>
 
@@ -40,17 +40,43 @@
     </section>
 
     <section>
-        <div class="max-w-7xl mx-auto mt-6 px-4">
+        <div class="flex gap-4 m-6 p-6">
 
-            <div class="flex gap-4 mb-6">
+            <button onclick="tabChange(event,'all')" class="btn-tab bg-indigo-600 text-white px-4 py-2 rounded cursor-pointer"> All (<span id="allCount">0</span>)</button>
 
-                <button onclick="changeTab(event,'all')" class="tab-btn bg-indigo-600 text-white px-4 py-2 rounded"> All </button>
+            <button onclick="tabChange(event,'open')" class="btn-tab bg-gray-200 px-4 py-2 rounded cursor-pointer"> Open (<span id="openCount">0</span>)</button>
+            
+            <button onclick="tabChange(event,'closed')" class="btn-tab bg-gray-200 px-4 py-2 rounded cursor-pointer"> Closed (<span id="closedCount">0</span>)</button>
 
-                <button onclick="changeTab(event,'open')" class="tab-btn bg-gray-200 px-4 py-2 rounded"> Open </button>
-
-                <button onclick="changeTab(event,'closed')" class="tab-btn bg-gray-200 px-4 py-2 rounded"> Closed </button>
-
-            </div>
+        </div>
     </section>
+
+    <section>
+        <div>
+            <div class="flex gap-2 ml-6 mb-5 ">
+                <img class="w-[50px]" src="./assets/Aperture.png" alt="">
+                <div>
+                    <h3 class="font-semibold">50 Issues</h3>
+                    <p class="text-[#64748B]">Track and manage your project issues</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="spinner" class="flex items-center justify-center py-8 hidden">
+        <span class="loading loading-spinner text-primary"></span>
+    </section>
+
+    <section>
+        <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        </div>
+    </section>
+
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+        
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
