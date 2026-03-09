@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title and Logo -->
+    <title>GitHub Issues Tracker</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <!-- font integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- daisy UI and tailwind -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <nav class="bg-white shadow p-4 flex justify-between items-center w-full">
+            <div class="flex items-center text-center gap-2 w-full">
+                <img class="w-[36px]" src="./assets/github-logo.png" alt="">
+                <h2 class="text-xl font-semibold mb-5 text-[#1F2937] mt-5 ">GitHub Issues Tracker</h2>
+            </div>
+
+            <div class="flex gap-4 h-[44px]">
+                
+                <input id="searchInput" class="border-gray-300 rounded px-3 py-1 text-[#64748B]" type="text" placeholder="Search issues..."/>
+
+                <button onclick="searchIssue()" class="bg-[#4A00FF] rounded hover:cursor-pointer font-normal text-white px-4 py-1 w-[140px]"> <span><i class="fa-solid fa-plus"></i></span> New Issue </button>
+
+            </div>
+        </nav>
+    </section>
+</body>
+</html>
